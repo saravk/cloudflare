@@ -385,6 +385,20 @@ module CloudFlare
 
     # This function setups a User's zone for CNAME hosting.
     #
+    # @see https://support.cloudflare.com/hc/en-us/articles/203702810-Host-Partner-Full-Zone-Set-Up-API-Instructions
+    #
+    # @param user_key [String]
+    # @param zone [String]
+    def full_zone_set(user_key, zone)
+      send_req({
+        act: :full_zone_set,
+        user_key: user_key,
+        zone_name: zone
+      })
+    end
+    
+    # This function setups a User's zone for CNAME hosting.
+    #
     # @see http://www.cloudflare.com/docs/host-api.html#s3.2.2
     #
     # @param user_key [String]
